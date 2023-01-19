@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+html {
+  font-size: 0.16129032vw;
+}
+.banner {
+  width: 100vw;
+  height: 244rem;
+}
+.banner img {
+  width: 100vw;
+}
+.nav {
+  width: 100vw;
+  height: 250rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+.nav-inner {
+  width: 100vw;
+  height: 125rem;
+  display: flex;
+}
+.nav-inner img {
+  width: 20vw;
+}
+.bg {
+  width: 100vw;
+  height: 60rem;
+  display: flex;
+  align-items: center;
+  margin-top: 20rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+.bg img {
+  height: 45rem;
+  margin-left: 10rem;
+}
+.bg span {
+  color: #D81E06;
+  font-size: 45rem;
+  font-weight: bold;
+  line-height: 60rem;
+  margin-left: 10rem;
+}
+.book-wrapper {
+  width: 100vw;
+}
+.book-wrapper::after {
+  content: "";
+  width: 100vw;
+  height: 70rem;
+  display: block;
+}
+.book {
+  width: 590rem;
+  height: 220rem;
+  margin: 20rem auto;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+}
+.book img {
+  height: 150rem;
+}
+.book h2 {
+  font-size: 25rem;
+}
+.book p {
+  height: 96rem;
+  width: 431rem;
+  font-size: 25rem;
+  color: #64656C;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+#classification {
+  height: 100vh;
+  width: 100vw;
+  background-color: #F7F8FA;
+  display: none;
+}
+#classification #classification-column {
+  float: left;
+  width: 150rem;
+}
+#classification #classification-column ul {
+  height: 100vh;
+  background-color: white;
+}
+#classification #classification-column li {
+  width: 125rem;
+  height: 96rem;
+  line-height: 96rem;
+  padding-left: 25rem;
+  font-size: 27rem;
+}
+#classification .classification-img img {
+  width: 220rem;
+  margin-top: 15rem;
+}
+#classification .classification-img {
+  float: left;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10rem;
+}
+#classification .classification-img .img-wrapper {
+  width: 220rem;
+  height: 320rem;
+  text-align: center;
+  background-color: white;
+  margin-left: 15rem;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+#classification .classification-img .img-wrapper h2 {
+  line-height: 40rem;
+  font-size: 25rem;
+}
+#children-book,
+#life,
+#humen,
+#cartoon,
+#inspiring,
+#manage,
+#education {
+  display: none;
+}
+#mine {
+  height: 100vh;
+  background-color: #F7F8FA;
+  display: none;
+}
+#mine .mine-img {
+  padding-top: 50rem;
+}
+#mine p {
+  color: #AFABAA;
+  font-size: 30rem;
+  text-align: center;
+}
+#mine .mine-img img {
+  width: 180rem;
+}
+#mine .item-wrapper {
+  height: 60rem;
+  padding: 0rem 30rem 0rem;
+  border-bottom: 1px solid #cecece;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
+#fragment {
+  width: 100vw;
+  position: fixed;
+  bottom: -1px;
+  display: flex;
+  border-top: 1px solid #999;
+  background-color: white;
+  padding: 10px;
+  z-index: 999;
+}
+#fragment div {
+  height: 50rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  color: #9F9F9F;
+}
+#fragment img {
+  width: 60rem;
+}
