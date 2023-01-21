@@ -132,6 +132,20 @@ html {
 #education {
   display: none;
 }
+#shop-car {
+  height: 100vw;
+  display: none;
+}
+#empty-car {
+  text-align: center;
+}
+#empty-car p {
+  color: #999;
+  font-size: 30rem;
+}
+#car {
+  display: none;
+}
 #mine {
   height: 100vh;
   background-color: #F7F8FA;
