@@ -135,8 +135,8 @@ for (var i = 0; i < book.length; i++) {
     book[i].getElementsByTagName("img")[0].src = books[i].thumbSrc;
     book[i].getElementsByTagName("h2")[0].innerHTML = books[i].bookName;
     book[i].getElementsByTagName("p")[0].innerHTML = books[i].content;
-    book[i].getElementsByTagName("h4")[0].innerHTML = "￥" + books[i].originalPrice;
-    book[i].getElementsByTagName("span")[0].innerHTML = "￥" + books[i].presentPrice;
+    book[i].getElementsByTagName("span")[0].innerHTML = "￥" + books[i].originalPrice;
+    book[i].getElementsByTagName("h4")[0].innerHTML = "￥" + books[i].presentPrice;
 
     // 设置点击事件，跳转到详情页，并通过localStorage存储数据，判断要渲染的数据
     book[i].onclick = function () {
