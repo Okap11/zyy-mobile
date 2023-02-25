@@ -181,11 +181,10 @@ for (var i = 0; i < document.getElementsByClassName("left-btn").length; i++) {
     document.getElementsByClassName("left-btn")[i].getElementsByTagName("button")[1].onclick = function () {
         number += 1;
         var id = this.id;
-        document.getElementsByClassName("left")[id].getElementsByTagName("span")[2].innerHTML = "x " + number;
         var persons = JSON.parse(localStorage.getItem("persons") || "[]");
         persons[id].num = number;
         localStorage.setItem("persons", JSON.stringify(persons));
-        document.getElementById("total-money").innerHTML = "￥" + (number * toal.toFixed(2));
+        document.getElementsByClassName("left")[id].getElementsByTagName("span")[2].innerHTML = "x " + persons[id].num;
     }
     document.getElementsByClassName("left-btn")[i].getElementsByTagName("button")[0].onclick = function () {
         number -= 1;
@@ -193,39 +192,40 @@ for (var i = 0; i < document.getElementsByClassName("left-btn").length; i++) {
         if (number < 1) {
             number = 1;
         }
-        document.getElementsByClassName("left")[id].getElementsByTagName("span")[2].innerHTML = "x " + number;
         var persons = JSON.parse(localStorage.getItem("persons") || "[]");
         persons[id].num = number;
         localStorage.setItem("persons", JSON.stringify(persons));
-        document.getElementById("total-money").innerHTML = "￥" + (number * toal.toFixed(2));
+        document.getElementsByClassName("left")[id].getElementsByTagName("span")[2].innerHTML = "x " + persons[id].num;
     }
     document.getElementsByClassName("right-btn")[i].getElementsByTagName("button")[0].onclick = function () {
         var id = this.id;
         var persons = JSON.parse(localStorage.getItem("persons") || "[]");
-        persons.splice(id,1);
+        persons.splice(id, 1);
         localStorage.setItem("persons", JSON.stringify(persons));
         car_item[id].style.display = "none";
-        if(persons.length == 0){
+        if (persons.length == 0) {
             document.getElementById("empty-car").style.display = "block";
         }
     }
 }
 
-
-
 var flag = 1;
 var info = document.getElementsByClassName("info");
 // 声明选择按钮函数
-function is_checked(e,j) {
+function is_checked(e, j) {
     var toal = 0;
     var persons = JSON.parse(localStorage.getItem("persons") || "[]");
+    if ("check" in persons[j]) {
+        flag = persons[j].check;
+    }
     flag += 1;
     persons[j].check = flag;
-    for(var i = 0; i < persons.length; i ++){
-        if(persons[i].check % 2 == 0){
+    localStorage.setItem("persons", JSON.stringify(persons));
+    for (var i = 0; i < persons.length; i++) {
+        if (persons[i].check % 2 == 0) {
             info[i].getElementsByTagName("button")[0].style.backgroundColor = "#1989FA";
             toal = toal + persons[i].originalPrice * persons[i].num;
-        }else{
+        } else {
             info[i].getElementsByTagName("button")[0].style.backgroundColor = "white";
         }
     }
@@ -236,32 +236,32 @@ function is_checked(e,j) {
 var a = 0;
 var sum = 0;
 var all_in = document.getElementById("all-in");
-all_in.onclick = function(){
-    if(a % 2 == 0){
+all_in.onclick = function () {
+    if (a % 2 == 0) {
         all_in.style.backgroundColor = "#1989FA";
-        for(var i = 0; i < info.length; i++){
+        for (var i = 0; i < info.length; i++) {
             info[i].getElementsByTagName("button")[0].style.backgroundColor = "#1989FA";
         }
-        for(var i = 0; i < persons.length; i ++){
+        for (var i = 0; i < persons.length; i++) {
             sum = sum + persons[i].originalPrice * persons[i].num;
         }
         document.getElementById("total-money").innerHTML = "￥" + (sum.toFixed(2));
-    }else{
+    } else {
         all_in.style.backgroundColor = "White";
-        for(var i = 0; i < info.length; i++){
+        for (var i = 0; i < info.length; i++) {
             info[i].getElementsByTagName("button")[0].style.backgroundColor = "white";
         }
         sum = 0;
         document.getElementById("total-money").innerHTML = "￥" + (0.00);
     }
     a++;
-}  
+}
 
 // 购买按钮
 var buy = document.getElementById("buy");
-buy.onclick = function(){
+buy.onclick = function () {
     var persons = JSON.parse(localStorage.getItem("persons") || "[]");
-    for(var i = 0; i < persons.length; i++){
+    for (var i = 0; i < persons.length; i++) {
         car_item[i].style.display = "none";
     }
     persons = [];
